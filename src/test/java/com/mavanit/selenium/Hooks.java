@@ -10,7 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 
 public class Hooks {
     public static WebDriver driver;
-    public String browser;
+    public String browser="";
     @Before
     public void setUp()
     {
@@ -21,17 +21,17 @@ public class Hooks {
     @After
     public void tearDown()
     {
-        driver.quit();
+        //driver.quit();
     }
     public void openBrowser()
     {
         switch (browser)
         {
-            case "IE":
+            case "ie" :
                 WebDriverManager.iedriver().setup();
                 driver=new InternetExplorerDriver();
                 break;
-            case "Firefox":
+            case "firefox":
                 WebDriverManager.firefoxdriver().setup();
                 driver=new FirefoxDriver();
                 break;
